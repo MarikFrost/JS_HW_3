@@ -351,26 +351,20 @@ const users = [{
     }
 }
 ]
-/*ЗАДАНИЕ
-Откройте в VSCode task2.json файл. Скопируйте из него JSONку, 
-вставьте в свой код (присвоив в переменную).
+const resultArray = []
 
-Дан массив объектов. Каждый объект является идентификационной карточкой человека. 
-Нам нужно хранить только уникальные значения в этом массиве. Реализуйте функцию, 
-которая будет выполнять эту работу.
-*/
+const myFunction = (users) => users.forEach((el, index) => {
+        let count
 
-const arrayForFirstExemple = {} 
-const userArray = (arrayData) => arrayData.forEach((element, id) => {  
-    arrayForFirstExemple[element.username] = element
-    delete arrayForFirstExemple[element.username].username
-});
+        resultArray.forEach(element => {
+            if(el.username === element.username) {
+                count = false
+            }
+        })
+        if(count !== false) {
+            resultArray.push(el)
+        }
+    });
 
-userArray(users)
-console.log(arrayForFirstExemple)
-/*В arrayForFirstExemple хранятся 10 уникальных записей. Username во главе объекта.
-по username доступна вся информация о человеке. 
-Все пользователи которые повторяются перезаписываются, тем самым не повторяются*/
-
-
-    
+myFunction(users)
+console.log(resultArray.length)
