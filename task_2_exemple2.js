@@ -367,4 +367,4 @@ const myFunction = (users) => users.forEach((el, index) => {
     });
 
 myFunction(users)
-console.log(resultArray.length)
+console.log(resultArray)
