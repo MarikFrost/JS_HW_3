@@ -78,6 +78,7 @@ const users = [
         registrationDate: '12.10.2021'
     },
 ];
+
 const newArray = []
 let i = 0
 const searchFunc = (arrayUsers) => 
