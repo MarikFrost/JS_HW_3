@@ -87,6 +87,5 @@ const searchFunc = (arrayUsers) =>
                     newArray[i++] = element
                 }
 });
-
 searchFunc(users)
 console.log(newArray)
