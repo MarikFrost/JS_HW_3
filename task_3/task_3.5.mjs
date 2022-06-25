@@ -7,17 +7,18 @@ import enterprises from './module_task3.mjs'
 editEnterprise(1, "Новое название предприятия")
 */
 const newName = "com.fort"
-const idCompany = 1
+const idCompany = 5
 
 function editEnterprise(id, nameCompany) {
+    let result = `Компании с id: ${id}, не существует`
     enterprises.forEach(element => {
         if(element.id === id) {
+            let valueCompany = element.name
             element.name = nameCompany
+            result = `Название компании с индентификатором ${id} изменено с ${valueCompany} на ${nameCompany}`
         }
     });
-
+return result
 }
-editEnterprise(idCompany, newName)
-enterprises.forEach(el => {
-    console.log(`Company id: ${el.id} his name ${el.name}`)
-})
+const result = editEnterprise(idCompany, newName)
+console.log(result)
