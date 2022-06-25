@@ -6,9 +6,10 @@ import enterprises from './module_task3.mjs'
 Пример:
 addDepartment(1, "Название нового отдела")
 */
-const companyId = 9
+const companyId = 2
 const departmentName = "Ночная мозговыколупывалка"
 function addDepartment (id, department) {
+    let result = `Компании с id: ${id}, не существует`
     enterprises.forEach(el => {
         if (el.id == id) {
             el.departments.push({
@@ -16,10 +17,10 @@ function addDepartment (id, department) {
                 name : department,
                 employees_count : 15
             })
+            result = `В компанию ${el.name} добавлен отдел ${department}`
         }
     })
+    return result
 }
-addDepartment(companyId, departmentName)
-enterprises.forEach(el => {
-    console.log(el)
-})
+const result = addDepartment(companyId, departmentName)
+console.log(result)
